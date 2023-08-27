@@ -1,0 +1,37 @@
+<div class="movie-details">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ movie.title }}</mat-card-title>
+    </mat-card-header>
+    <div class="poster-container">
+      <img
+        *ngIf="movie.poster_path"
+        [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+        [alt]="movie.title"
+        class="movie-poster"
+      />
+    </div>
+    <mat-card-content>
+      <p>{{ movie.overview }}</p>
+      <p>Release Date: {{ movie.release_date }}</p>
+      <p>Vote Average: {{ movie.vote_average }}</p>
+    </mat-card-content>
+    <div *ngIf="movie.trailers && movie.trailers.length > 0" class="trailers-container">
+      <h3>Trailers</h3>
+      <ul class="trailer-list">
+        <li *ngFor="let trailer of movie.trailers">
+          <a href="javascript:void(0)" (click)="selectTrailer(trailer.key)">
+            {{ trailer.name }}
+          </a>
+        </li>
+      </ul>
+      <div class="video-player">
+        <iframe
+          *ngIf="selectedTrailerKey"
+          [src]="sanitizeUrl('https://www.youtube.com/embed/' + selectedTrailerKey)"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,12 @@
+<mat-grid-list cols="3" gutterSize="20px">
+  <mat-grid-tile *ngFor="let movie of movies">
+    <div class="movie-card">
+      <img class="movie-poster" src="https://image.tmdb.org/t/p/w400/{{ movie.poster_path }}" alt="{{ movie.title }}">
+      <h3 class="movie-title">{{ movie.title }}</h3>
+      <p class="movie-overview">{{ movie.overview }}</p>
+      <div class="button-container">
+        <button mat-button color="primary" [routerLink]="['/movie', movie.id]">Details</button>
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

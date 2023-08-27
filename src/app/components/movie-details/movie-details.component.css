@@ -1,0 +1,49 @@
+/* movie-details.component.css */
+.movie-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.mat-card {
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.poster-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.movie-poster {
+  max-width: 100%;
+  height: auto;
+}
+
+.trailers-container {
+  margin-top: 20px;
+}
+
+.trailer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.trailer-list li {
+  margin-bottom: 10px;
+}
+
+
+
+.video-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
